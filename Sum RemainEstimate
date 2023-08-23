@@ -1,0 +1,11 @@
+def unstableRemainingJql = "Sprint in futureSprints("+projectKey+") and originalEstimate is not EMPTY"
+def unstableRemainingLogs = get_worklogs(unstableRemainingJql)
+def count = unstableRemainingLogs.total
+def remainingLogsList = unstableRemainingLogs.issues.fields.timeestimate
+def unstableTimeData = 0
+if(remainestimate.isEmpty()){
+    unstableTimeData = 0
+}else{
+    unstableTimeData = (remainingLogsList.sum()/3600)
+}
+def info = remainestimate+" - hrs Remaining time estimates added to current sprint from past sprint and Total Efforts - "+FinalValue+", Dev Efforts - "+devInHours+" , QA Efforts - "+qaInHours+" and Cureent Sprint RemainEstimate = "+unstableTimeData
